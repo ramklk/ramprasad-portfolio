@@ -1,0 +1,131 @@
+:root {
+  --paper: #f7f6f0;
+  --ink: #1d2522;
+  --muted: #686f69;
+  --line: #d5d9cf;
+  --green: #e7f56a;
+  --blue: #3558f6;
+  --panel: #eff0e8;
+  --coral: #ff765e;
+}
+
+::selection { background: var(--green); color: var(--ink); }
+.topbar { border-bottom-color: #bfc5b9; }
+.mark { border-radius: 7px 50% 50% 50%; transform: rotate(-8deg); }
+.nav a { position: relative; }
+.nav a:not(.nav-contact)::after {
+  content: ""; position: absolute; height: 2px; bottom: -5px; left: 0; width: 0;
+  background: var(--coral); transition: width .22s ease;
+}
+.nav a:not(.nav-contact):hover::after { width: 100%; }
+
+.hero { padding-top: 96px; padding-bottom: 83px; }
+.eyebrow { letter-spacing: .1em; }
+.eyebrow::before { width: 28px; height: 3px; background: var(--coral); }
+h1 { max-width: 700px; }
+h1 span { position: relative; display: inline-block; color: var(--blue); }
+h1 span::after {
+  content: ""; position: absolute; left: 2px; right: 4px; height: 8px; bottom: -8px;
+  background: var(--coral); clip-path: polygon(0 40%,25% 18%,51% 40%,77% 14%,100% 30%,98% 62%,74% 44%,49% 72%,24% 47%,2% 72%);
+}
+.hero-art {
+  min-height: 370px; background-color: #1d2522;
+  background-image: radial-gradient(#ffffff21 1px,transparent 1px);
+  background-size: 17px 17px; border-radius: 3px 3px 72px 3px;
+  box-shadow: 12px 12px 0 var(--green);
+}
+.hero-art::before {
+  width: 280px; height: 280px; right: -28px; top: 58px; background: var(--coral);
+  clip-path: polygon(50% 0,60% 8%,73% 3%,79% 16%,94% 19%,91% 34%,100% 47%,90% 58%,95% 73%,80% 79%,76% 94%,61% 90%,49% 100%,39% 89%,23% 96%,18% 81%,4% 76%,10% 61%,0 49%,10% 38%,4% 23%,19% 18%,24% 4%,39% 10%);
+  animation: slow-turn 28s linear infinite;
+}
+.hero-art::after {
+  width: 217px; height: 217px; right: 3px; top: 91px; background: transparent;
+  border: 2px solid #1d2522; border-radius: 50%; mix-blend-mode: normal;
+  box-shadow: 0 0 0 12px #ffffff2d, 0 0 0 24px #ffffff15;
+}
+.art-core { transform: rotate(-7deg); background: var(--green); border: 0; color: var(--ink); box-shadow: 3px 4px 0 var(--blue); }
+.art-bottom strong { font-size: 15px; }
+
+.section { padding-top: 84px; padding-bottom: 84px; }
+.section-kicker { color: var(--blue); letter-spacing: .16em; }
+.section-title { max-width: 680px; }
+.projects { gap: 22px; }
+.project {
+  position: relative; overflow: hidden; border: 1px solid #d8dbd1;
+  border-radius: 3px 3px 30px 3px; padding: 25px 28px 25px;
+  box-shadow: 0 3px 0 #d5d9cf; min-height: 370px;
+}
+.project::before {
+  content: "SCAN MAP"; height: 101px; margin: -25px -28px 21px; padding: 12px 14px;
+  display: flex; align-items: flex-end; color: #39445f; font: 500 9px var(--mono);
+  letter-spacing: .16em; border-bottom: 1px solid #cbd2e2;
+  background:
+    radial-gradient(circle at 72% 45%,#ff765e 0 5px,transparent 6px),
+    radial-gradient(circle at 72% 45%,transparent 0 22px,#3558f646 23px 24px,transparent 25px 39px,#3558f62c 40px 41px,transparent 42px),
+    repeating-linear-gradient(0deg,transparent 0 15px,#3558f612 15px 16px),
+    linear-gradient(120deg,#e7ebf8,#f8f0e9);
+}
+.project:nth-child(2)::before {
+  content: "KNOWLEDGE GRAPH"; color: #68472e; border-color: #eed3b2;
+  background:
+    radial-gradient(circle at 67% 38%,#3558f6 0 5px,transparent 6px),
+    radial-gradient(circle at 49% 57%,#ff765e 0 4px,transparent 5px),
+    radial-gradient(circle at 82% 67%,#e2be42 0 5px,transparent 6px),
+    linear-gradient(27deg,transparent 49.4%,#ad977a80 49.5% 50%,transparent 50.1%),
+    linear-gradient(137deg,transparent 49.4%,#ad977a80 49.5% 50%,transparent 50.1%),
+    linear-gradient(110deg,#fff1dc,#fffaf1);
+}
+.project:nth-child(3)::before {
+  content: "CATEGORY MODEL"; color: #354a70; border-color: #d5dfef;
+  background:
+    linear-gradient(90deg,#3558f6 0 12px,transparent 12px) 67% 33%/28% 7px no-repeat,
+    linear-gradient(90deg,#7aa7ee 0 27px,transparent 27px) 67% 52%/40% 7px no-repeat,
+    linear-gradient(90deg,#314f83 0 41px,transparent 41px) 67% 71%/53% 7px no-repeat,
+    linear-gradient(90deg,#dbe4f0 100%,transparent) 67% 33%/53% 7px no-repeat,
+    linear-gradient(90deg,#dbe4f0 100%,transparent) 67% 52%/53% 7px no-repeat,
+    linear-gradient(90deg,#dbe4f0 100%,transparent) 67% 71%/53% 7px no-repeat,
+    linear-gradient(125deg,#edf3fc,#f8faff);
+}
+.project:nth-child(4)::before {
+  content: "IN PROGRESS"; color: #eff3c4; border-color: #4a5149;
+  background:
+    radial-gradient(circle at 80% 40%,transparent 0 23px,#e7f56a 24px 25px,transparent 26px 37px,#ffffff40 38px 39px,transparent 40px),
+    linear-gradient(135deg,#28433a,#1d2522 65%,#28354b);
+}
+.project-head,.project h3,.project p,.project ul,.project .tags,.project-link { position: relative; z-index: 1; }
+.project-icon { border-radius: 50% 50% 4px 50%; transform: rotate(8deg); }
+.project:nth-child(1) { background: #f0f1f8; }
+.project:nth-child(2) { background: #fff8ed; }
+.project:nth-child(3) { background: #f5f7fb; }
+.project:nth-child(4) { border-color: #343d37; box-shadow: 0 3px 0 #151b18; }
+.project:hover { transform: translateY(-5px) rotate(-.3deg); box-shadow: 0 8px 0 #d5d9cf; }
+.project:nth-child(2):hover { transform: translateY(-5px) rotate(.3deg); }
+.project:nth-child(4):hover { background: #202b26 !important; box-shadow: 0 8px 0 #151b18; }
+.tag { border-radius: 2px 8px 2px 8px; }
+.project-link span { border-bottom-color: var(--coral); }
+
+#about .section-head { margin-bottom: 48px; }
+#about .timeline-item { border-left: 3px solid var(--coral); padding-left: 18px; }
+.skill { border-radius: 14px 14px 14px 3px; background: #eeefe8; }
+.education { background: linear-gradient(180deg,transparent,#eff0e8 28%,#eff0e8 100%); }
+.education .timeline-item { max-width: 850px; }
+.education .timeline-item h3::after { content: " ✳"; color: var(--coral); font: 400 12px var(--mono); }
+.contact { position: relative; overflow: hidden; }
+.contact::after {
+  content: "RK"; position: absolute; right: 2vw; bottom: -150px;
+  color: #ffffff08; font: 800 clamp(220px,33vw,440px)/1 var(--display);
+  letter-spacing: -.12em; pointer-events: none;
+}
+.contact-grid { position: relative; z-index: 1; }
+.contact .section-kicker { color: var(--green); }
+.contact .button { border-radius: 2px 18px 2px 18px; }
+.footer-inner { letter-spacing: .1em; }
+@keyframes slow-turn { to { transform: rotate(360deg); } }
+@media(max-width:760px) {
+  .hero { padding-top: 67px; }
+  .hero-art { min-height: 300px; box-shadow: 8px 8px 0 var(--green); }
+  .section { padding-top: 62px; padding-bottom: 62px; }
+  .project { min-height: 0; }
+}
+@media(prefers-reduced-motion:reduce) { .hero-art::before { animation: none; } }
